@@ -28,3 +28,32 @@ int main()
         cout<<duplicates[i]<<endl;
     }
 }
+
+/*
+Brute Force method
+using nested loop and extra space
+
+*/
+
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// int main() {
+//     int arr[] = {1,1,2};
+//     int size = sizeof(arr) / sizeof(arr[0]);
+//     int arr2[size] = {1};
+//     for(int i = 0; i<size;i++) {
+//         for(int j = i+1; j<size; j++) {
+//             if(arr[i] == arr[j]) {
+//                 arr2[i] = arr[j];
+//             }
+//         }
+//     }
+//     int size1 = sizeof(arr2) / sizeof(arr2[0]);
+//     for(int i = 0; i<size1; i++) {
+//         if(arr2[i] > 0) {
+//             cout<<arr2[i]<<" ";
+//         }
+//     }
+//     return 0;
+// }
