@@ -63,4 +63,31 @@ int main() {
     return 0;
 }
 
+/*
+Kadane Algo Largest Sum
+*/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void largestSubArray(int arr[], int size) {
+    // Prefix sum
+    int current_sum = 0;
+    int largest_sum = 0;
+    for(int i = 0; i<size;i++) {
+        current_sum += arr[i];
+        if(current_sum < 0) {
+            current_sum = 0;
+        }
+        largest_sum = max(largest_sum,current_sum);
+    }
+    cout<<"Largest Subarray sum is: "<<largest_sum<<endl;
+}
+
+int main() {
+    int arr[] = {-2,3,4,-1,5,-12,6,1,3};
+    int size = sizeof(arr)/sizeof(int);
+    largestSubArray(arr, size);
+    return 0;
+}
     
