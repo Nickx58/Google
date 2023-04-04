@@ -3,25 +3,43 @@
     Assumtion Array is sorted.
     If you given unsorted arry as a input then sort the array First
 */
-
-let arr1 = [1, 21, 3, 4, 5, 6];
-arr1.sort((a, b) => a - b);
-console.log(arr1);
-let arr2 = [3, 4, 5, 6, 7];
-let i = 0;
-let j = 0;
-let ins = [];
-
-while (i < arr1.length && j < arr2.length) {
-  if (arr1[i] === arr2[j]) {
-    ins.push(arr1[i]);
-    i++;
-    j++;
-  } else if (arr1[i] < arr2[j]) {
-    i++;
-  } else {
-    j++;
-  }
+#include <bits/stdc++.h>
+vector<int> findArrayIntersection(vector<int> &arr1, int n, vector<int> &arr2, int m)
+{
+	// Write your code here.
+	vector<int> arr;
+	int i = 0;
+	int j = 0;
+	while(i<n && j<m) {
+		if(arr1[i] == arr2[j]) {
+			arr.push_back(arr1[i]);
+			i++;
+			j++;
+		} else if(arr1[i] < arr2[j]) {
+			i++;
+		} else {
+			j++;
+		}
+	}
+	return arr;
 }
 
-console.log(ins.length);
+/*
+Brute Force apporach
+*/
+
+vector<int> findArrayIntersection(vector<int> &arr1, int n, vector<int> &arr2, int m)
+{
+	// Write your code here.
+	vector<int> arr;
+	for(int i = 0; i<n;i++) {
+		for(int j = 0; j<m;j++) {
+			if(arr1[i] == arr2[j]) {
+				arr.push_back(arr1[i]);
+				arr2[j] = INT_MIN;
+				break;
+			}
+		}
+	}
+	return arr;
+}
