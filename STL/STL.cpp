@@ -3,6 +3,8 @@
 #include <deque>
 #include <stack>
 #include <queue>
+#include <map>
+#include <string>
 using namespace std;
 
 /*
@@ -54,4 +56,48 @@ int main() {
   q.push("Nisha");
   cout<<"Queue Top Element: "<<q.front()<<endl;
   /* Queue End */
+
+  /* Priority Queue Start */
+  cout<<"***Priority Queue***"<<endl;
+  // Max Heap
+  priority_queue<int> maxi;
+
+  // Min heap
+  priority_queue<int, vector<int>, greater<int>> mini;
+
+  maxi.push(1);
+  maxi.push(2);
+  maxi.push(3);
+  maxi.push(4);
+  int n = maxi.size();
+  for(int i = 0; i<n;i++) {
+    cout<<maxi.top()<<" ";
+    maxi.pop();
+  }cout<<endl;
+
+  mini.push(1);
+  mini.push(2);
+  mini.push(3);
+  mini.push(4);
+  int m = mini.size();
+  for(int i = 0; i<m;i++) {
+    cout<<mini.top()<<" ";
+    mini.pop();
+  }cout<<endl;
+
+  /* Priority Queue End */
+
+  /* Map Start */
+  cout<<"***MAP***"<<endl;
+  map<int, string> myMap;
+  myMap[1] = "Nikhil";
+  myMap[2] = "Nisha";
+  myMap[3] = "Sunaina";
+
+  myMap.insert({5, "Hemu"});
+
+  for(auto i:myMap) {
+    cout<<i.first<<" "<<i.second<<endl;
+  }
+  /* Map End */
 }
