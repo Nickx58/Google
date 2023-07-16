@@ -35,3 +35,27 @@ int main() {
     cout<<endl;
     return 0;
 }
+
+/*
+Optimal Approach without taking extra space
+    // Step 1
+    // Find the index of first 0 element
+    int j = -1;
+    for(int i = 0; i<n; i++) {
+        if(arr[i] == 0) {
+            j = i;
+            break;
+        }
+    }
+
+    // step 2
+    // swap the index of zero and non-zero element;
+
+    for(int i = j+1; i<n; i++) {
+        if(arr[i] != 0) {
+            swap(arr[i],arr[j]);
+            j++;
+        }
+    }
+
+*/
