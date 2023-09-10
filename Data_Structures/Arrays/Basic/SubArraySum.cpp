@@ -65,12 +65,28 @@ int printSubArrayPrefix(int arr[], int n) {
     return maxSum;
 }
 
+// using Kadande Algo O(n) complexity.
+int kadaneAlgo(int arr[], int n) {
+    int currSum = 0;
+    int largest = 0;
+
+    for(int i = 0; i<n; i++) {
+        currSum += arr[i];
+        if(currSum < 0) {
+            currSum = 0;
+        }
+        largest = max(largest, currSum);
+    }
+    return largest;
+}
+
 int main() {
     // Write C++ code here
     int arr[] = {-2,3,4,-1,5,-12,6,1,3};
     int size = sizeof(arr)/sizeof(int);
     int sum = printSubArray(arr, size);
     int sumPrefix = printSubArrayPrefix(arr, size);
-    cout<<sum<<sumPrefix<<endl;
+    int sumKadane = kadaneAlgo(arr, size);
+    cout<<sum<<sumPrefix<<sumKadane<<endl;
     return 0;
 }
