@@ -12,10 +12,12 @@ document.querySelector(".check").addEventListener("click", function () {
     document.querySelector(".message").textContent = "No Number";
     return;
   }
-  if (score == 1) {
+  if (score == 0) {
     document.querySelector(".message").textContent = "You lost the game.";
   } else if (number === guessNumber) {
     document.querySelector(".message").textContent = "Correct Number";
+    document.querySelector("body").style.backgroundColor = "#60b347";
+    document.querySelector(".number").style.width = "30rem";
   } else if (number < guessNumber) {
     document.querySelector(".message").textContent = "Too High";
     score--;
