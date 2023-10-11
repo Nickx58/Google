@@ -2,19 +2,22 @@
 #include <string>
 
 using namespace std;
-int main() {
+int main()
+{
     // Write C++ code here
     int n;
-    cin>>n;
+    cin >> n;
     string s;
-    cin>>s;
+    cin >> s;
     int count = 0;
 
-    for(int i = 0; i<s.size() - 1; i++) {
-        if(s[i] == s[i+1]) {
+    for (int i = 0; i < s.size() - 1; i++)
+    {
+        if (s[i] == s[i + 1])
+        {
             count++;
         }
     }
-    cout<<count<<endl;
+    cout << count << endl;
     return 0;
 }
