@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import className from "classnames";
 function Button({
   children,
   primary,
@@ -10,7 +10,11 @@ function Button({
   outline,
   rounded,
 }) {
-  return <button>{children}</button>;
+  return (
+    <button className="bg-blue-500 text-white px-3 py-1.5 border border-blue-600">
+      {children}
+    </button>
+  );
 }
 
 Button.propTypes = {
@@ -25,6 +29,5 @@ Button.propTypes = {
       return new Error("One one of type can be true");
     }
   },
-  outline: PropTypes.bool
 };
 export default Button;
