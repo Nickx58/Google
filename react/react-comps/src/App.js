@@ -6,7 +6,8 @@ function App() {
   return (
     <div className="app">
       <h1>React Comp</h1>
-      <Button>Click ME</Button>
+      <Button primary>Click ME</Button>
+      <Button primary success>Click ME</Button>
     </div>
   );
 }
