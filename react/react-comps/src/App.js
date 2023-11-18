@@ -6,10 +6,19 @@ function App() {
     <div className="app">
       <h1>React Comp</h1>
       <div>
-        <Button primary>Click ME</Button>
+        <Button primary>Primary</Button>
       </div>
       <div>
-        <Button primary>Click ME</Button>
+        <Button secondary>Secondary</Button>
+      </div>
+      <div>
+        <Button success>Success</Button>
+      </div>
+      <div>
+        <Button warning>Warning</Button>
+      </div>
+      <div>
+        <Button danger rounded>Danger</Button>
       </div>
     </div>
   );
