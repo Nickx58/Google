@@ -6,14 +6,14 @@ import {
   MdBathtub,
   MdBrightness2,
 } from "react-icons/md";
-import Button from "./components/Button";
+import Button from '../components/Button'
 
-function App() {
+function ButtonPage() {
   return (
     <div className="app">
       <h1>React Comp</h1>
       <div>
-        <Button outline primary>
+        <Button primary>
           <MdAndroid />
           Primary
         </Button>
@@ -46,4 +46,4 @@ function App() {
   );
 }
 
-export default App;
+export default ButtonPage;
