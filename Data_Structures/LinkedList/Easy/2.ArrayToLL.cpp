@@ -32,10 +32,20 @@ Node *convertArrayToLL(vector<int> &arr)
     return head;
 }
 
+void printList(Node *head)
+{
+    Node *temp = head;
+    while (temp)
+    {
+        cout << temp->data << " ";
+        temp = temp->next;
+    }
+}
+
 int main()
 {
     vector<int> arr = {1, 2, 3};
 
     Node *head = convertArrayToLL(arr);
-    cout << head->data;
+    printList(head);
 }
