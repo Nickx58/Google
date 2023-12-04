@@ -61,6 +61,29 @@ Node *deleteHead(Node *head)
     return head;
 }
 
+Node *deleteTail(Node *head)
+{
+    if (head == NULL || head->next == NULL)
+    {
+        return NULL;
+    }
+
+    Node *temp = head;
+
+    while (temp->next)
+    {
+        temp = temp->next;
+    }
+
+    Node *prev = temp->prev;
+    prev->next = nullptr;
+    temp->prev = nullptr;
+
+    delete temp;
+
+    return head;
+}
+
 void print(Node *head)
 {
     Node *temp = head;
