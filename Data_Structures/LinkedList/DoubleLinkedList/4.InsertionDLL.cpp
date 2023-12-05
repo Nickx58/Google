@@ -63,6 +63,51 @@ Node *insertBeforeHead(Node *head, int val)
     return newHead;
 }
 
+Node *insertAtEnd(Node *head, int val)
+{
+    if (head == NULL)
+    {
+        return NULL;
+    }
+
+    Node *temp = head;
+
+    while (temp->next)
+    {
+        temp = temp->next;
+    }
+
+    Node *newNode = new Node(val);
+
+    temp->next = newNode;
+    newNode->next = nullptr;
+    newNode->prev = temp;
+
+    return head;
+}
+
+Node *insertBeforeTail(Node *head, int val)
+{
+    Node *temp = head;
+
+    while (temp->next)
+    {
+        temp = temp->next;
+    }
+
+    Node *newNode = new Node(val);
+
+    Node *prevNode = temp->prev;
+
+    prevNode->next = newNode;
+    newNode->prev = prevNode;
+
+    newNode->next = temp;
+    temp->prev = newNode;
+
+    return head;
+}
+
 int main()
 {
     vector<int> arr = {1, 2, 3, 4, 5};
