@@ -27,3 +27,15 @@ divWithClassArray.forEach(div => div.style.color = "green");
 /* 
     basic of Selector End.
 */
+
+/* querySelector START*/
+
+const divWithData = document.querySelector('[data-test]');
+
+const divClassQ = document.querySelectorAll('.div-classq'); // it return NodeList i.e different from HTML collection
+divClassQ.forEach(div => div.style.color = "brown");
+
+const input = document.querySelector('input');
+console.log(input);
+
+/* querySelector END*/
