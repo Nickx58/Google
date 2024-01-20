@@ -1,5 +1,5 @@
 type GreetProps = {
-  name: string;
+  name?: string; // use ? to tell this props will be optional
   bikesList: {
     name: string;
   }[];
