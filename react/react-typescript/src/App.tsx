@@ -1,5 +1,6 @@
 import "./App.css";
 import { Button } from "./components/Button";
+import { Container } from "./components/Container";
 import { Greet } from "./components/Greet";
 import { Heading } from "./components/Heading";
 import { Input } from "./components/Input";
@@ -22,6 +23,7 @@ function App() {
       </TextChildren>
       <Button handleClick={(e, n) => console.log("Called", e, n)} />
       <Input value="Nick" handleChange={(e) => console.log(e)} />
+      <Container styles={{ border: "1px solid black", padding: "1rem" }} />
     </div>
   );
 }
