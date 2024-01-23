@@ -6,6 +6,7 @@ import { Heading } from "./components/Heading";
 import { Input } from "./components/Input";
 import { Status } from "./components/Status";
 import { TextChildren } from "./components/Text";
+import { Counter } from "./components/state/Counter";
 import { LoggedIN } from "./components/state/LoggedIN";
 
 const bikesList = [{ name: "Speed 400" }, { name: "Scram 411" }];
@@ -26,6 +27,7 @@ function App() {
       <Input value="Nick" handleChange={(e) => console.log(e)} />
       <Container styles={{ border: "1px solid black", padding: "1rem" }} />
       <LoggedIN />
+      <Counter />
     </div>
   );
 }
