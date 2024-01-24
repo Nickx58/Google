@@ -1,47 +1,27 @@
 import React from "react";
-import {
-  MdAndroid,
-  MdAccessibility,
-  MdAreaChart,
-  MdBathtub,
-  MdBrightness2,
-} from "react-icons/md";
-import Button from "./components/Button";
+
+import Accordion from "./components/Accordion";
+
+const items = [
+  {
+    label: "React",
+    content: "Can I use react",
+  },
+  {
+    label: "Vue",
+    content: "Can I use Vue",
+  },
+  {
+    label: "Angular",
+    content: "Can I use Angular",
+  },
+];
 
 function App() {
   return (
     <div className="app">
       <h1>React Comp</h1>
-      <div>
-        <Button outline primary>
-          <MdAndroid />
-          Primary
-        </Button>
-      </div>
-      <div>
-        <Button secondary>
-          <MdAccessibility />
-          Secondary
-        </Button>
-      </div>
-      <div>
-        <Button success>
-          <MdAreaChart />
-          Success
-        </Button>
-      </div>
-      <div>
-        <Button warning>
-          <MdBathtub />
-          Warning
-        </Button>
-      </div>
-      <div>
-        <Button danger rounded>
-          <MdBrightness2 />
-          Danger
-        </Button>
-      </div>
+      <Accordion items={items} />
     </div>
   );
 }
