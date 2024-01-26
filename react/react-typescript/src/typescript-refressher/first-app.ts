@@ -12,12 +12,25 @@ hobbies = ["Cricket", "Riding"]
 
 // function type
 
+type AddFunc = (a:number,b:number) => number
+
 function add(a: number, b: number) : number {
     return a+b;
 }
 
-function calculate(a:number, b:number, calc:(a:number,b:number) => number): void {
+function calculate(a:number, b:number, calc: AddFunc): void {
     calc(a,b);
 }
 
 calculate(5,10,add);
+
+interface Credentials {
+    name: string;
+    email: string;
+}
+
+let creds:Credentials;
+creds = {
+    name: "NN",
+    email: "ee"
+}
