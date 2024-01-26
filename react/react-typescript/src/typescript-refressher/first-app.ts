@@ -34,3 +34,26 @@ creds = {
     name: "NN",
     email: "ee"
 }
+
+// merge Types
+type Admin = {
+    permission: string[];
+}
+
+type AppUser = {
+    userName: string;
+}
+
+type AppAdmin = Admin & AppUser;
+
+// Interface syntax
+
+interface appUser {
+    permissions: string[]
+}
+
+interface admin {
+    username: string
+}
+
+interface appadmin extends appUser, admin {}
