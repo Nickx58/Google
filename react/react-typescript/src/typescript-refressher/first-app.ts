@@ -57,3 +57,7 @@ interface admin {
 }
 
 interface appadmin extends appUser, admin {}
+
+let role: 'admin' | 'user' | 'editor';
+
+role = 'admin'
