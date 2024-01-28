@@ -1,5 +1,6 @@
 import Input from "./AdvanceComponents/Input";
 import Button from "./AdvanceComponents/Button";
+import Container from "./AdvanceComponents/Container";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
           Link
         </Button>
       </p>
+      <Container as={Button}>Click me</Container>
     </main>
   );
 }
