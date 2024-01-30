@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
+import { GoChevronDown, GoChevronLeft } from "react-icons/go";
 
 const Accordion = ({ items }) => {
-  const renderItems = items?.map((item) => {
+  const [expandedIndex, setExpandedIndex] = useState(0);
+  const renderItems = items?.map((item, index) => {
+    const isExpand = index === expandedIndex;
+    const icon = (
+      <span>{isExpand ? <GoChevronDown /> : <GoChevronLeft />}</span>
+    );
     return (
       <div key={item.label}>
-        <div>{item.label}</div>
-        <div>{item.content}</div>
+        <div onClick={() => setExpandedIndex(index)}>
+          {icon}
+          {item.label}
+        </div>
+        {isExpand && <div>{item.content}</div>}
       </div>
     );
   });
