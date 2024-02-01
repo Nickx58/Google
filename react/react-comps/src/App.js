@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import DropDown from "./components/DropDown";
 
 const options = [
@@ -8,10 +8,19 @@ const options = [
 ];
 
 function App() {
+  const [selection, onSelection] = useState(null);
+
+  const handleSelection = (option) => {
+    onSelection(option);
+  };
   return (
     <div className="app">
       <h1>React Comp</h1>
-      <DropDown options={options} />
+      <DropDown
+        options={options}
+        value={selection}
+        onChange={handleSelection}
+      />
     </div>
   );
 }
