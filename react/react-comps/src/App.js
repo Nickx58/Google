@@ -1,27 +1,17 @@
 import React from "react";
+import DropDown from "./components/DropDown";
 
-import Accordion from "./components/Accordion";
-
-const items = [
-  {
-    label: "React",
-    content: "Can I use react",
-  },
-  {
-    label: "Vue",
-    content: "Can I use Vue",
-  },
-  {
-    label: "Angular",
-    content: "Can I use Angular",
-  },
+const options = [
+  { label: "Red", value: "red" },
+  { label: "Black", value: "black" },
+  { label: "yellow", value: "yellow" },
 ];
 
 function App() {
   return (
     <div className="app">
       <h1>React Comp</h1>
-      <Accordion items={items} />
+      <DropDown options={options} />
     </div>
   );
 }
