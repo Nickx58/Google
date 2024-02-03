@@ -1,9 +1,11 @@
 import React from "react";
+import Link from "./components/Link";
 
 function App() {
   return (
     <div className="app">
-      <h1>React Comp</h1>
+      <Link to="/accordion">Go to Accordion</Link>
+      <Link to="/dropdown">Go to DropDown</Link>
     </div>
   );
 }
