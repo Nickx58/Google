@@ -11,4 +11,25 @@ function Dog(name, age) {
     this.age = age;
 }
 
+Dog.prototype.play = function() {
+    return `${this.name} can bark wolf wolf`;
+}
+
 const sheru = new Dog('sheru', 10)
+
+const grandParent = {
+    greet() {
+        return 'Hello'
+    }
+}
+
+const parent = {
+    sing() {
+        return 'LALA'
+    },
+    __proto__: grandParent
+}
+
+const child = {
+    __proto__: parent
+}
