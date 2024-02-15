@@ -47,3 +47,13 @@ All visited objects are remembered, so as not to visit the same object twice in 
 …And so on until every reachable (from the roots) references are visited.
 All objects except marked ones are removed.
 */
+
+/*
+The most intricate thing happens with strings, numbers and booleans.
+
+As we remember, they are not objects. But if we try to access their properties,
+temporary wrapper objects are created using built-in constructors String, Number and Boolean.
+They provide the methods and disappear.
+
+Methods of these objects also reside in prototypes, available as String.prototype, Number.prototype and Boolean.prototype
+*/
