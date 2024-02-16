@@ -29,3 +29,26 @@ obj1.sayHi() // this will point to obj1 object
 
 const ref = obj1.sayHi;
 ref(); // point to global object
+
+// advance -> this in async method/callback
+
+const asyncObj = {
+    value: 29,
+    regularMethod() {
+        // this->obj
+        setTimeout(function() {
+            console.log('this inside set', this.value) // window or undefined
+        }, 100)
+    },
+    arrowMethod() {
+        setTimeout(() => {
+            console.log('this inside arrow and set', this.value) // 29
+        }, 100);
+    }
+}
+
+asyncObj.regularMethod()
+asyncObj.arrowMethod()
+
+// async callback executed with respect to global object
+// arrow function refer to the object at the time of creation
