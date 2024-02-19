@@ -49,3 +49,38 @@ fetch(URL).then(function (data) {
         console.log(err)
     })
 }
+
+// make a function to resolve promise using recursion
+{
+    const p1 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Google")
+        }, 1000)
+    })
+
+    const p2 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Amazon")
+        }, 2000)
+    })
+
+    const p3 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Microsoft")
+        }, 3000)
+    })
+
+    function promiseRec(pro) {
+        if (pro.length === 0) {
+            return "Provide some function to execute"
+        }
+
+        const p = pro.shift();
+        p.then((res) => console.log(res)).catch(err => console.error(err));
+
+        promiseRec(pro)
+
+    }
+
+    promiseRec([p1, p2, p3]);
+}
