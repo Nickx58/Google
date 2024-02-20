@@ -84,3 +84,27 @@ fetch(URL).then(function (data) {
 
     promiseRec([p1, p2, p3]);
 }
+
+{
+    console.log("Helo");
+
+    const p = new Promise((resolve, reject) => {
+        console.log("1");
+        resolve("Promise");
+        console.log("2")
+    })
+
+    p.then((data) => {
+        console.log(data);
+    })
+
+    console.log("World")
+    // The sync code inside the new Promise will be executed
+    /*
+    "Helo"
+    "1"
+    "2"
+    "World"
+    "Promise"
+    */
+}
