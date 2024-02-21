@@ -20,7 +20,6 @@ const items = [
 function AccordianPage() {
   return (
     <div className="app">
-      <h1>React Comp</h1>
       <Accordion items={items} />
     </div>
   );
