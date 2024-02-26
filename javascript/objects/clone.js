@@ -43,3 +43,49 @@ This ensures that changes made to the cloned object or its nested properties do 
     const deepClone = JSON.parse(JSON.stringify(originalObject));
 
 }
+{
+    function deepClone(obj) {
+        if (typeof obj !== 'object' || obj === null) {
+            // If obj is not an object or is null, return the obj itself
+            return obj;
+        }
+
+        // Create a new object or array to hold the cloned values
+        const clonedObj = Array.isArray(obj) ? [] : {};
+
+        // Iterate over the keys of the original object
+        for (let key in obj) {
+            if (Object.hasOwnProperty.call(obj, key)) {
+                // Check if the key is an array
+                const clonedKey = Array.isArray(key) ? [...key] : key;
+
+                // Check if the value is a function
+                if (typeof obj[key] === 'function') {
+                    // Clone functions by redefining them
+                    clonedObj[clonedKey] = obj[key].bind({});
+                } else {
+                    // Recursively clone nested objects and arrays
+                    clonedObj[clonedKey] = deepClone(obj[key]);
+                }
+            }
+        }
+
+        return clonedObj;
+    }
+
+    // Example usage:
+    const originalObj = {
+        name: "Ni",
+        hobbies: ["bike", "car"],
+        sayHello() {
+            console.log(this.name);
+        },
+        nested: {
+            last: "sharma"
+        }
+    };
+
+    const clonedObj = deepClone(originalObj);
+    console.log(clonedObj);
+
+}
