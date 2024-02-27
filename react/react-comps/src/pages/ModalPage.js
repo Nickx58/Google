@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import Modal from "../components/Modal";
+import Button from "../components/Button";
 
 const ModalPage = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleButtonClick = () => {
+        setIsModalOpen(true)
+    }
     return (
-        <Modal />
+        <>
+            <Button onClick={handleButtonClick} primary>Open</Button>
+            {isModalOpen && <Modal />}
+        </>
     )
 }
 
