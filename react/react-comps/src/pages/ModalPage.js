@@ -15,7 +15,11 @@ const ModalPage = () => {
     return (
         <>
             <Button onClick={handleButtonClick} primary>Open</Button>
-            {isModalOpen && <Modal onClose={handleModalClose} />}
+            {isModalOpen && (
+                <Modal onClose={handleModalClose}>
+                    I accpet the agrement
+                </Modal>
+            )}
         </>
     )
 }
