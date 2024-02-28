@@ -8,10 +8,14 @@ const ModalPage = () => {
     const handleButtonClick = () => {
         setIsModalOpen(true)
     }
+
+    const handleModalClose = () => {
+        setIsModalOpen(false)
+    }
     return (
         <>
             <Button onClick={handleButtonClick} primary>Open</Button>
-            {isModalOpen && <Modal />}
+            {isModalOpen && <Modal onClose={handleModalClose} />}
         </>
     )
 }
