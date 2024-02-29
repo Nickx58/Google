@@ -20,6 +20,13 @@ const reducer = (state, action) => {
             value: action.payload
         }
     }
+    if (action.type === 'add_value_count') {
+        return {
+            ...state,
+            value: 0,
+            count: state.count + state.value
+        }
+    }
     return state
 }
 
@@ -33,9 +40,7 @@ const CounterPage = () => {
     const handleSubmit = e => {
         e.preventDefault();
 
-        //dispatch({type: 'value', p})
-        // setCount(count => count + value)
-        // setValue(0)
+        dispatch({ type: 'add_value_count' })
     }
     return (
         <div>
