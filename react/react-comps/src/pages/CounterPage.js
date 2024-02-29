@@ -1,30 +1,56 @@
-import React, { useState } from "react";
+import React, { useReducer } from "react";
 import Button from "../components/Button";
 
+const reducer = (state, action) => {
+    if (action.type === 'increment') {
+        return {
+            ...state,
+            count: state.count + 1
+        }
+    }
+    if (action.type === 'decrement') {
+        return {
+            ...state,
+            count: state.count - 1
+        }
+    }
+    if (action.type === 'value') {
+        return {
+            ...state,
+            value: action.payload
+        }
+    }
+    return state
+}
+
 const CounterPage = () => {
-    const [count, setCount] = useState(5);
-    const [value, setValue] = useState();
+
+    const [state, dispatch] = useReducer(reducer, {
+        count: 5,
+        value: 0
+    })
 
     const handleSubmit = e => {
         e.preventDefault();
 
-        setCount(count => count + value)
-        setValue(0)
+        //dispatch({type: 'value', p})
+        // setCount(count => count + value)
+        // setValue(0)
     }
     return (
         <div>
-            <h1 className="text-lg">Count is: {count}</h1>
+            <h1 className="text-lg">Count is: {state.count}</h1>
             <div className="flex flex-row">
-                <Button onClick={() => setCount(count => count + 1)}>Increment</Button>
-                <Button onClick={() => setCount(count => count - 1)}>Decrement</Button>
+                <Button onClick={() => dispatch({ type: 'increment' })}>Increment</Button>
+                <Button onClick={() => dispatch({ type: 'decrement' })}>Decrement</Button>
             </div>
             <form onSubmit={handleSubmit}>
                 <label>Add a lot value</label>
                 <input
                     type="number"
                     className="p-1 m-3 bg-gray-50 border border-gray-300"
-                    value={value || ''}
-                    onChange={e => setValue(parseInt(e.target.value) || 0)}
+                    value={state.value || ''}
+                    onChange={e => dispatch({ type: 'value', payload: parseInt(e.target.value) })}
                 />
                 <Button>Add</Button>
             </form>
