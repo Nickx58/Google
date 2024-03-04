@@ -1,9 +1,11 @@
 import './App.css';
+import Tree from './components/Tree';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <h1>For Uber</h1>
+      <Tree />
     </div>
   );
 }
