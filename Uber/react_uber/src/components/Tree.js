@@ -37,7 +37,7 @@ const Tree = () => {
     }
     return (
         <div>
-            Tree Folder Question
+            <h2>Tree Folder Question</h2>
             <div>
                 {treeStructure(exampleObj)}
             </div>
