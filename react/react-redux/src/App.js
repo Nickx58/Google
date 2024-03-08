@@ -1,7 +1,13 @@
 import "./styles.css";
+import { useDispatch } from "react-redux";
 import MoviePlaylist from "./components/MoviePlaylist";
 import SongPlaylist from "./components/SongPlaylist";
-import { useDispatch } from "react-redux";
+import CarForm from "./components/CarForm";
+import CarList from "./components/CarList";
+import CarSearch from "./components/CarSearch";
+import CarPrice from "./components/CarPrice";
+
+
 import { reset } from "./store";
 
 export default function App() {
@@ -19,6 +25,13 @@ export default function App() {
             <MoviePlaylist />
             <hr />
             <SongPlaylist />
+            <hr />
+            <div className="car-container">
+                <CarForm />
+                <CarSearch />
+                <CarList />
+                <CarPrice />
+            </div>
         </div>
     );
 }
