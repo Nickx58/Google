@@ -99,3 +99,25 @@ console.log(getUnique(cars)); // ["santro", "i20", "maruti", "virtus", "polo"]
     console.log(returnCount(arr));
 
 }
+
+{
+    /*
+    Add all the numbers in the string
+    const str = "AB_12_CD_23_EF_30"
+    */
+    const str = "AB_12_CD_23_EF_30"
+
+    const numArr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+    function addNumber(str) {
+        let sum = 0;
+        for (let i = 0; i < str.length; i++) {
+            if (numArr.includes(str[i])) {
+                let n = parseInt(str[i])
+                sum += n;
+            }
+        }
+        return sum;
+    }
+
+    console.log(addNumber(str));
+}
