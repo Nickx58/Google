@@ -121,3 +121,19 @@ console.log(getUnique(cars)); // ["santro", "i20", "maruti", "virtus", "polo"]
 
     console.log(addNumber(str));
 }
+
+{
+    // javascript coding question   Input: “today is monday” Outptut: “Today Is Monday”  
+    const str = "today is monday";
+
+    function strCase(str) {
+        let arr = str.split(' ');
+        for (let i = 0; i < arr.length; i++) {
+            let temp = arr[i].split('');
+            temp[0] = temp[0].toUpperCase();
+            let a = temp.join('');
+            arr[i] = a;
+        }
+        return arr.join(' ');
+    }
+}
