@@ -137,3 +137,36 @@ console.log(getUnique(cars)); // ["santro", "i20", "maruti", "virtus", "polo"]
         return arr.join(' ');
     }
 }
+
+{
+    const obj = {
+        stuff: "foo",
+        data: {
+            val: {
+                thing: {
+                    info: "bar",
+                    moreInfo: {
+                        evenMoreInfo: {
+                            weMadeIt: "baz"
+                        }
+                    }
+                }
+            }
+        }
+    }
+    function collectStrings(obj) {
+        let arr = [];
+
+        for (let key in obj) {
+            if (typeof obj[key] === 'object') {
+                let ans = collectStrings(obj[key]);
+                arr.push(...ans);
+            } else {
+                arr.push(obj[key]);
+            }
+        }
+        return arr;
+    }
+    const result = collectStrings(obj);
+    console.log(result); // ['foo', 'bar', 'baz']
+}
