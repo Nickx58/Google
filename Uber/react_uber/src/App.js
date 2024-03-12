@@ -2,6 +2,7 @@ import './App.css';
 import Tree from './components/Tree';
 import PhoneBook from './components/PhoneBook';
 import ColorInput from './components/ColorInput';
+import CBox from './components/CBox';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Tree />
       <PhoneBook />
       <ColorInput />
+      <CBox />
     </div>
   );
 }
