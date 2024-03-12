@@ -170,3 +170,33 @@ console.log(getUnique(cars)); // ["santro", "i20", "maruti", "virtus", "polo"]
     const result = collectStrings(obj);
     console.log(result); // ['foo', 'bar', 'baz']
 }
+
+{
+    const arr = [
+        [1, 2, 3, 4],
+        [5, 6, 7, 8],
+        [1, 2, 3, 4, 2]
+    ]
+    // check for duplicates in 2d array
+    function validSudoku(arr) {
+        let index = -1;
+
+        for (let i = 0; i < arr.length; i++) {
+            const seen = {};
+            if (index !== -1) {
+                break;
+            }
+            for (let j = 0; j < arr[i].length; j++) {
+                const current = arr[i][j];
+                if (seen[current]) {
+                    index = i;
+                    break;
+                } else {
+                    seen[current] = true;
+                }
+            }
+        }
+        return index
+    }
+    validSudoku(arr);
+}
