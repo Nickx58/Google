@@ -5,10 +5,10 @@ React optimization
 Event Loop and Queues
 
 difference between Prototype and __proto__
- console.log(null+undefined);
-console.log(null-3);
-console.log(5+undefined);
-if(null==undefined)
+console.log(null+undefined); // NAN
+console.log(null-3); // -3 -> null will change to 0 so hence 0-3 = -3
+console.log(5+undefined); // NAN -> 5+ NAN
+if(null==undefined) //true -> JavaScript coerces both null and undefined to the same value before comparison, resulting in true.
 
 Uber system design interview
 Design Uber Bus and describe the various services required for it. 
@@ -18,7 +18,7 @@ How to handle deadlines in case team members go on unplanned leaves.
 
 console.log(null + undefined)
 console.log(true - 3)
-console.log(typeof typeof [2,3,4])
+console.log(typeof typeof [2,3,4]) // string -> typeof [2,3,4] will return 'object' then again typeof 'object' will give string
 function sum (p = 3, p) { alert(p) }
 sum(2)
 What are the new features of ES6?
