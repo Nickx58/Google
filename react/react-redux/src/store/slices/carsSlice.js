@@ -7,7 +7,7 @@ const carSlice = createSlice({
         cars: []
     },
     reducers: {
-        changeSearchTerm(state, action) {
+        searchTermChange(state, action) {
             state.searchTerm = action.payload
         },
         addCar(state, action) {
@@ -24,5 +24,5 @@ const carSlice = createSlice({
     }
 })
 
-export const { searchTerm, addCar, removeCar } = carSlice.actions;
+export const { addCar, removeCar, searchTermChange } = carSlice.actions;
 export const carReducer = carSlice.reducer
