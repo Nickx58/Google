@@ -14,5 +14,3 @@ bool subArrayExists(int arr[], int n)
     }
     return false;
 }
-}
-;
