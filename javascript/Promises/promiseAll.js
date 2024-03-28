@@ -1,25 +1,12 @@
-function PromiseAll(promises) {
-	return new Promise(function(resolve, reject) {
-  	let settledCount = 0;
-    let results = new Array(promises.length);
-    
-    promises.forEach(function(promise, index) {
-    	Promise.resolve(promise).then(function(result) {
-      	results[index] = result;
-        settledCount++;
-        
-        if(settledCount === promises.length) {
-        	resolve(results)
-        }
-      }, reject);
-    });
-  });
-};
+function allPromise(promises) {
+}
 
-const promise1 = Promise.resolve(1);
-const promise2 = new Promise((resolve) => setTimeout(resolve, 100, 2));
-const promise3 = Promise.resolve(3);
+function fn1() {
+}
 
-PromiseAll([promise1, promise2, promise3]).then((values) => {
-  console.log('Promise.all Result:', values); // Output: [1, 2, 3]
+function fn2() {
+}
+
+allPromise([fn1(), fn2()]).then((response) => {
+  console.log(response);
 });
