@@ -41,3 +41,22 @@ test('should render one row data-test-id way', () => {
     const rows = container.querySelectorAll('tbody tr');
     expect(rows).toHaveLength(2);
 })
+
+test('should render the email and name of the each user', () => {
+    const users = [
+        { name: "nn", email: "nn@gmail.com" },
+        { name: "nisha", email: "nisahn@gmail.com" }
+    ];
+
+    render(<UserList users={users} />);
+    for (let user of users) {
+        const name = screen.getByRole('cell', {
+            name: user.name
+        })
+        const email = screen.getByRole('cell', {
+            name: user.email
+        });
+        expect(name).toBeInTheDocument();
+        expect(email).toBeInTheDocument();
+    }
+})
