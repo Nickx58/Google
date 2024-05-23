@@ -52,3 +52,41 @@ test('it call userOnAddFunction when form is submit', async () => {
     expect(mock).toHaveBeenCalledWith({ name: "Nikhil", email: "nn@gmail.com" });
 
 })
+
+test('should empty the input value on button click', async () => {
+    const mock = jest.fn();
+
+    // render the component
+    render(<UserForm addUsers={mock} />);
+
+    // find the element
+    const nameInput = screen.getByRole('textbox', {
+        name: /name/i
+    })
+    const emailInput = screen.getByRole('textbox', {
+        name: /email/i
+    });
+
+    // simulate the typing in name
+
+    await user.click(nameInput);
+    await user.keyboard('Nikhil');
+
+    // simulate the typing in email
+
+    await user.click(emailInput);
+    await user.keyboard('nn@gmail.com');
+
+    // find the button
+
+    const button = screen.getByRole('button');
+
+    // simulate the click
+
+    await user.click(button);
+
+    // assert the function call
+    expect(nameInput).toHaveValue('')
+    expect(emailInput).toHaveValue('')
+
+})
