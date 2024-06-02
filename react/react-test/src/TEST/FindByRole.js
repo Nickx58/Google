@@ -45,6 +45,10 @@ test('can find element by role', () => {
 function AccessilbeName() {
   return (
     <div>
+      <label htmlFor="email">Email</label>
+      <input id="email" />
+      <label htmlFor="search">Search</label>
+      <input id="search" />
       <button>Submit</button>
       <button>Cancel</button>
     </div>
@@ -55,9 +59,45 @@ render(<AccessilbeName />);
 
 test('can selet by accessible name', () => {
   const submitButton = screen.getByRole('button', {
-    name: /submit/i
+    name: /submit/i,
   });
   const cancelButton = screen.getByRole('button', {
-    name: /cancel/i
+    name: /cancel/i,
   });
+});
+test("can select input by name", () => {
+  const emailInput = screen.getByRole('textbox', {
+    name: /email/i
+  });
+  const searchInput = screen.getByRole('textbox', {
+    name: /search/i
+  });
+  expect(emailInput).toBeInTheDocument();
+  expect(searchInput).toBeInTheDocument();
 })
+
+function IconButton() {
+  return (
+    <div>
+      <button aria-label="signIN">
+        <svg />
+      </button>
+      <button aria-label="signOUT">
+        <svg />
+      </button>
+    </div>
+  )
+}
+
+render(<IconButton />);
+
+test("icon button aria-label", () => {
+  const signINButton = screen.getByRole('button', {
+    name: /signIN/i
+  });
+  const signOUTButton = screen.getByRole('button', {
+    name: /signOUT/i
+  });
+  expect(signINButton).toBeInTheDocument();
+  expect(signOUTButton).toBeInTheDocument();
+});
