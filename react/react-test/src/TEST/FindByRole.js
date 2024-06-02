@@ -41,3 +41,23 @@ test('can find element by role', () => {
     expect(el).toBeInTheDocument();
   }
 });
+
+function AccessilbeName() {
+  return (
+    <div>
+      <button>Submit</button>
+      <button>Cancel</button>
+    </div>
+  );
+}
+
+render(<AccessilbeName />);
+
+test('can selet by accessible name', () => {
+  const submitButton = screen.getByRole('button', {
+    name: /submit/i
+  });
+  const cancelButton = screen.getByRole('button', {
+    name: /cancel/i
+  });
+})
