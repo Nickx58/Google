@@ -58,3 +58,12 @@ test('getAllBy, queryAllBy and findAllBy', async () => {
     expect(screen.queryAllByRole('listitem')).toHaveLength(3);
     expect(await screen.findAllByRole('listitem')).toHaveLength(3);
 });
+
+/*
+When to use each
+Goal of test                            Use
+Prove an element exists                 getBy,getAllBy
+Prove an element does not exist         queryBy,queryAllBy
+Make Sure an element eventually exists  findBy,findAllBy
+*/
+
