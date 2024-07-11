@@ -1,7 +1,11 @@
+import EmployeeDatabase from "./employee-database/EmployeeDatabase";
+
+import './app.css'
+
 function App() {
   return (
     <div className="App">
-      <h1>React Machine Coding round Prep</h1>
+      <EmployeeDatabase />
     </div>
   );
 }
