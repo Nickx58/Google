@@ -6,6 +6,17 @@ import EmployeeDetail from "./components/EmployeeDetail";
 
 const EmployeeDatabase = () => {
     const [employeeList, setEmployeeList] = useState(employeeData)
+    const [selectedEmployee, setSelectedEmployee] = useState(null)
+
+    const onEmployeeDelete = id => {
+        const newList = employeeList.filter(item => item.id !== id);
+        setEmployeeList(newList)
+    }
+
+    const onEmployeeSelect = id => {
+        const employee = employeeList.find(item => item.id === id);
+        setSelectedEmployee(employee)
+    }
     return (
         <>
             <Flex>
@@ -18,8 +29,8 @@ const EmployeeDatabase = () => {
                 </Box>
             </Flex>
             <Grid templateColumns="40% 60%" gap={0} p={4}>
-                <EmployeeList list={employeeList} />
-                <EmployeeDetail />
+                <EmployeeList list={employeeList} handleOnClick={onEmployeeDelete} onEmployeeSelect={onEmployeeSelect} />
+                <EmployeeDetail selectedEmployee={selectedEmployee} />
             </Grid>
         </>
     )
