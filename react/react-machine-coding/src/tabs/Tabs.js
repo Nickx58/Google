@@ -16,7 +16,9 @@ const Tabs = ({ tabs }) => {
                     </Button>
                 )
             })}
-            {tabs[activeIndex].content}
+            <div style={{ marginTop: '20px' }}>
+                {tabs[activeIndex].content}
+            </div>
         </div>
     )
 }

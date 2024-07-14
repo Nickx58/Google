@@ -1,6 +1,7 @@
 import EmployeeDatabase from "./employee-database/EmployeeDatabase";
 import FileExplorer from "./file-explorer/FileExplorer";
 import Pagination from "./pagination/Pagination";
+import PasswordChecker from "./password-checker/PasswordChecker";
 import Tabs from "./tabs/Tabs";
 
 import './app.css'
@@ -8,7 +9,8 @@ import './app.css'
 const tabs = [
   { title: 'Employee Data Base', content: <EmployeeDatabase /> },
   { title: 'File Explorer', content: <FileExplorer /> },
-  { title: 'Pagination', content: <Pagination /> }
+  { title: 'Pagination', content: <Pagination /> },
+  { title: 'Password Checker', content: <PasswordChecker /> }
 ]
 
 function App() {

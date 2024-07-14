@@ -1,0 +1,42 @@
+.password {
+    margin-top: 50px;
+    width: 500px;
+    height: 300px;
+    background-color: #2E2E2E;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+.password__text {
+    color: #EBEBE8;
+    font-weight: bold;
+}
+
+.password__copy {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.password__btn {
+    background-color: #03AB99;
+    width: 80px;
+}
+
+.password__btn--generate {
+    background-color: #03AB99;
+    width: 100%;
+    height: 40px;
+}
+
+.password__range {
+    width: 100%;
+}
+
+.password__checkbox {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 5px;
+}
