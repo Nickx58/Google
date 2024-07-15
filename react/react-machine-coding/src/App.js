@@ -5,12 +5,14 @@ import PasswordChecker from "./password-checker/PasswordChecker";
 import Tabs from "./tabs/Tabs";
 
 import './app.css'
+import DebounceSearch from "./debounce-search/DebounceSearch";
 
 const tabs = [
   { title: 'Employee Data Base', content: <EmployeeDatabase /> },
   { title: 'File Explorer', content: <FileExplorer /> },
   { title: 'Pagination', content: <Pagination /> },
-  { title: 'Password Checker', content: <PasswordChecker /> }
+  { title: 'Password Checker', content: <PasswordChecker /> },
+  { title: 'Debounce Search', content: <DebounceSearch /> }
 ]
 
 function App() {
