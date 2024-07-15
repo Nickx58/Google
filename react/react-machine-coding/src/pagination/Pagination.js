@@ -15,7 +15,7 @@ const Pagination = () => {
     }
     useEffect(() => {
         fetchProducts();
-    }, [page])
+    }, [])
 
     const selectPageHandler = (selectedPage) => {
         if (selectedPage >= 1 && selectedPage <= products.length / 10 && selectedPage !== page) {
