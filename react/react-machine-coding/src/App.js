@@ -4,6 +4,7 @@ import Pagination from "./pagination/Pagination";
 import PasswordChecker from "./password-checker/PasswordChecker";
 import DebounceSearch from "./debounce-search/DebounceSearch";
 import CountryCapital from "./country-capital/CountryCapital";
+import ProgressBar from "./progress-bar/ProgressBar";
 import Tabs from "./tabs/Tabs";
 
 import './app.css'
@@ -15,7 +16,8 @@ const tabs = [
   { title: 'Pagination', content: <Pagination /> },
   { title: 'Password Checker', content: <PasswordChecker /> },
   { title: 'Debounce Search', content: <DebounceSearch /> },
-  { title: 'Country Capital', content: <CountryCapital /> }
+  { title: 'Country Capital', content: <CountryCapital /> },
+  { title: 'Progress Bar', content: <ProgressBar /> }
 ]
 
 function App() {
