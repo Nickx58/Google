@@ -5,6 +5,7 @@ import PasswordChecker from "./password-checker/PasswordChecker";
 import DebounceSearch from "./debounce-search/DebounceSearch";
 import CountryCapital from "./country-capital/CountryCapital";
 import ProgressBar from "./progress-bar/ProgressBar";
+import GridLight from "./grid-light/GridLight";
 import Tabs from "./tabs/Tabs";
 
 import './app.css'
@@ -17,7 +18,8 @@ const tabs = [
   { title: 'Password Checker', content: <PasswordChecker /> },
   { title: 'Debounce Search', content: <DebounceSearch /> },
   { title: 'Country Capital', content: <CountryCapital /> },
-  { title: 'Progress Bar', content: <ProgressBar /> }
+  { title: 'Progress Bar', content: <ProgressBar /> },
+  { title: 'Grid Light', content: <GridLight /> }
 ]
 
 function App() {
