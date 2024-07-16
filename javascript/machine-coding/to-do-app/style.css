@@ -8,6 +8,14 @@ body {
     background-color: #f4f4f4;
 }
 
+.counter-container {
+    margin-right: 10px;
+}
+
+.counter-container__heading {
+    text-align: center;
+}
+
 .container {
     background: white;
     padding: 20px;

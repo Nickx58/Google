@@ -3,6 +3,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const addButton = document.getElementById('add-task');
     const ulList = document.getElementById('task-list');
 
+    // counter
+    const count = document.getElementById('count');
+    const increment = document.getElementById('increment')
+    const decrement = document.getElementById('decrement')
+
+    var counter = 0;
+    increment.addEventListener('click', () => {
+        counter++;
+        count.textContent = counter;
+    })
+
+    decrement.addEventListener('click', () => {
+        counter--;
+        count.textContent = counter;
+    })
 
     addButton.addEventListener('click', () => {
         const value = input.value.trim();
