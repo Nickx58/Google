@@ -6,6 +6,7 @@ import DebounceSearch from "./debounce-search/DebounceSearch";
 import CountryCapital from "./country-capital/CountryCapital";
 import ProgressBar from "./progress-bar/ProgressBar";
 import GridLight from "./grid-light/GridLight";
+import QuizApp from "./quiz-app/QuizApp";
 import Tabs from "./tabs/Tabs";
 
 import './app.css'
@@ -19,7 +20,8 @@ const tabs = [
   { title: 'Debounce Search', content: <DebounceSearch /> },
   { title: 'Country Capital', content: <CountryCapital /> },
   { title: 'Progress Bar', content: <ProgressBar /> },
-  { title: 'Grid Light', content: <GridLight /> }
+  { title: 'Grid Light', content: <GridLight /> },
+  { title: "Quiz App", content: <QuizApp /> }
 ]
 
 function App() {
